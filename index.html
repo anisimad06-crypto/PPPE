@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIS IMAD EDDINE BELLI - Control Engineering student</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-text {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(to right, #a509d4, #40a6da);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text2 {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(to right, #e28e18, #dbb768);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text3 {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(to right, #ee3440, #c05e77);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-item h4 {
+            font-family: 'Lucida Calligraphy', cursive;
+            font-size: 24px;
+        }
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(to right,#a509d4, #40a6da);
+            margin-left: 5px;
+        }
+        h1 {
+            font-family: 'Inria Serif', serif;
+            font-style: italic;
+        }
+        h2 {
+            font-family: 'Pristina', cursive;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg px-4 py-5 md:px-20 flex justify-between items-center">
+        <div class="text-xl font-bold text-amber-200">ANIS IMAD EDDINE BELLI
+                    </div>
+<ul style="font-size: medium; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="nav-links hidden md:flex space-x-8">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#professional">professional life</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#personal">personal life</a></li>
+            <li><a href="#contact">Contacts</a></li>
+        </ul>
+<button class="md:hidden text-2xl">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+<!-- Hero Section -->
+    <section id="home" class="min-h-screen pt-32 pb-20 px-4 md:px-20 flex flex-col items-center">
+        <div class="w-full flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-16 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-purple-400">Welcome :&#41;</h1>
+                <h2 class="text-3xl md:text-4xl mb-4 gradient-text2">I'm Anis Imad Eddine BELLI</h2>
+                <h3 class="text-2xl md:text-3xl mb-8 gradient-text">Automation & Control engineering student</h3>
+                <button onclick="scrollToContact()" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-3 rounded-full hover:from-purple-600 hover:to-blue-600 transition-all shadow-lg">
+                    Got a project?
+                </button>
+            </div>
+            <div class="relative md:w-1/2 flex justify-center">
+                <div class="absolute -z-10 w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-20 blur-3xl"></div>
+              <div class="relative w-72 h-72 md:w-[28rem] md:h-[28rem] rounded-full border-4 border-purple-400 overflow-hidden profile-border" style="box-shadow: 0 0 60px rgba(168, 85, 247, 0.5), 0 0 100px rgba(96, 165, 250, 0.4), inset 0 0 40px rgba(169, 85, 247, 0.772);">
+                    <img src="a pic of mine.png" alt="Profile" class="w-full h-full object-cover object-center">
+                </div>
+</div>
+        </div>
+        <div class="w-full mt-16 py-8 flex flex-wrap justify-center gap-8 text-gray-400">
+            <span>HTML5</span>
+            <span>CSS</span>
+            <span>Javascript</span>
+            <span>Python</span>
+            <span>C++</span>
+            <span>Github</span>
+        </div>
+    </section>
+
+    <!-- Services & About Section -->
+    <section id="about" class="py-20 px-4 md:px-20">
+        <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2 space-y-8">
+                <div class="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all cursor-pointer border-l-4 border-purple-500">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-purple-500 bg-opacity-20 flex items-center justify-center text-2xl">💻</div>
+                        <h3 class="text-xl">Website Development</h3>
+                    </div>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all cursor-pointer border-l-4 border-yellow-500">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-yellow-500 bg-opacity-20 flex items-center justify-center text-2xl">🎨</div>
+                        <h3 class="text-xl">Graphic Design</h3>
+                    </div>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all cursor-pointer border-l-4 border-red-500">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-red-500 bg-opacity-20 flex items-center justify-center text-2xl">🤖</div>
+                        <h3 class="text-xl">Robotics & Technical Projects</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center md:text-left">About Me</h2>
+                <p class="text-gray-300 mb-8 leading-relaxed">
+                    I am a student at the National Polytechnic School of Algiers(ENPA), with a strong academic background and passion for technology and design.
+                    Ranked among the top 18% of my class after completing two years of preparatory studies, I combine solid analytical skills with creativity.
+                    I actively work on technical and robotics-related projects that allow me to turn ideas into practical solutions.
+                </p>
+                <div class="flex flex-col md:flex-row gap-8 justify-center">
+                    <div class="text-center">
+                        <h4 class="text-3xl font-bold gradient-text">Top 18%</h4>
+                        <p class="text-gray-400">Class Ranking</p>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-3xl font-bold gradient-text">2+</h4>
+                        <p class="text-gray-400">Years of Technical Studies</p>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-3xl font-bold gradient-text">3</h4>
+                        <p class="text-gray-400">Main Skill Areas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 md:px-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">My Skills</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-12"></div>
+
+        <div class="space-y-12">
+            <div>
+                <h3 class="text-2xl font-bold mb-6 text-purple-400 border-l-4 border-purple-500 pl-4">Programming & Development</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="skill-card group relative p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700 hover:border-purple-500 transition-all">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-blue-300">HTML5</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 95%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">95%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Semantic markup, accessibility, modern APIs</p>
+                    </div>
+                    <div class="skill-card group relative p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700 hover:border-purple-500 transition-all">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-blue-300">CSS3</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 90%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">90%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Flexbox, Grid, Animations, Responsive design</p>
+                    </div>
+<div class="skill-card group relative p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700 hover:border-purple-500 transition-all">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-blue-300">JavaScript</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 85%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">85%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">ES6+, DOM manipulation, Async programming</p>
+                    </div>
+                    <div class="skill-card group relative p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700 hover:border-purple-500 transition-all">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-blue-300">Python</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 80%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">80%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Data structures, OOP, Scripting, Automation</p>
+                    </div>
+                    <div class="skill-card group relative p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700 hover:border-purple-500 transition-all">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-blue-300">C/C++</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 70%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">70%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Memory management, Algorithms, Embedded systems</p>
+                    </div>
+                    <div class="skill-card group relative p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700 hover:border-purple-500 transition-all">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-blue-300">SQL</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 80%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">80%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Query optimization, Schema design, Transactions</p>
+                    </div>
+</div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-6 text-yellow-400 border-l-4 border-yellow-500 pl-4">Engineering & Technical Tools</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="skill-card p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-yellow-500/10 flex items-center justify-center text-yellow-400 text-xl">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-yellow-300">MATLAB</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-yellow-500 to-amber-500" style="width: 85%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">85%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Simulations, Data analysis, Algorithm development</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-yellow-500/10 flex items-center justify-center text-yellow-400 text-xl">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-yellow-300">SolidWorks</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-yellow-500 to-amber-500" style="width: 70%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">70%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">3D modeling, Assembly design, Technical drawings</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold mb-6 text-pink-400 border-l-4 border-pink-500 pl-4">Design & Media</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="skill-card p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 text-xl">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-pink-300">Canva</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-pink-500 to-rose-500" style="width: 90%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">90%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Graphic design, Social media content, Presentations</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-400 text-xl">
+                                <i class="fas fa-file-powerpoint"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-pink-300">PowerPoint</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-pink-500 to-rose-500" style="width: 80%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">80%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Professional presentations, Slide design, Storytelling</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold mb-6 text-green-400 border-l-4 border-green-500 pl-4">Development Tools</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="skill-card p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400 text-xl">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-green-300">GitHub</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-green-500 to-emerald-500" style="width: 85%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">85%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Version control, Collaboration, CI/CD pipelines</p>
+                    </div>
+                    <div class="skill-card p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="skill-icon w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center text-green-400 text-xl">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-lg font-medium text-green-300">VS Code</h4>
+                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
+                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-green-500 to-emerald-500" style="width: 95%"></div>
+                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">95%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Extensions, Debugging, Workspace configuration</p>
+                    </div>
+                </div>
+            </div>
+</div>
+    </section>
+    <!-- Professional Section -->
+    <section id="professional" class="py-20 px-4 md:px-20 bg-gray-800">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Professional Journey</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-12"></div>
+        
+        <div class="max-w-7xl mx-auto">
+            <div class="p-8 bg-gray-900 rounded-xl cursor-pointer hover:bg-gray-800 transition-all" onclick="openProfessionalModal()">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="lg:w-1/2 p-8">
+                        <img src="professional life1.jpg" alt="Professional Life" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <div class="lg:w-1/2 p-8">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 gradient-text">Professional Journey</h3>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full text-xs bg-blue-900 bg-opacity-30 text-blue-300">Work</span>
+                            <span class="px-3 py-1 rounded-full text-xs bg-purple-900 bg-opacity-30 text-purple-300">Education</span>
+                            <span class="px-3 py-1 rounded-full text-xs bg-green-900 bg-opacity-30 text-green-300">Skills</span>
+                        </div>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            My professional journey includes academic achievements at ENPA and hands-on experience in various technical projects. 
+                            I've developed expertise in automation, control systems, and web development through both coursework and personal initiatives.
+                        </p>
+                        <button onclick="openProfessionalModal()" class="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-colors">
+                            View Details →
+                        </button>
+                    </div>
+                </div>
+</div>
+</div>
+</section>
+
+    <!-- Projects Section -->
+<section id="projects" class="py-20 px-4 md:px-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Projects</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-12"></div>
+
+        <div class="flex flex-col md:flex-row gap-12 items-center bg-gray-800 rounded-2xl overflow-hidden">
+            <div class="md:w-1/2 p-8">
+                <img src="roboko3.jpg" alt="ROBOKO Robotics Challenge" class="rounded-lg shadow-2xl w-full">
+            </div>
+            <div class="md:w-1/2 p-8">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4 gradient-text3">ROBOKO Robotics Challenge</h3>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 rounded-full text-xs bg-red-900 bg-opacity-30 text-red-300">Robotics</span>
+                    <span class="px-3 py-1 rounded-full text-xs bg-blue-900 bg-opacity-30 text-blue-300">Team Work</span>
+                    <span class="px-3 py-1 rounded-full text-xs bg-green-900 bg-opacity-30 text-green-300">Problem Solving</span>
+                    <span class="px-3 py-1 rounded-full text-xs bg-purple-900 bg-opacity-30 text-purple-300">IEEE ENP</span>
+                </div>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    ROBOKO is a robotics competition organized by the IEEE Student Branch at the École Nationale Polytechnique d'Alger.
+                    This project required consistancy, teamwork, critical thinking, and technical problem-solving under time constraints.
+                </p>
+                <button onclick="openProjectModal()" class="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-colors">
+                    View Project →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Section -->
+    <section id="personal" class="py-20 px-4 md:px-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Personal Life</h2>
+        <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-12"></div>
+        
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-12 items-center bg-gray-800 rounded-2xl overflow-hidden cursor-pointer hover:bg-gray-700 transition-all" onclick="openPersonalModal()">
+                <div class="lg:w-1/2 p-8">
+                    <img src="personal life1.jpg" alt="Personal Life" class="rounded-lg shadow-2xl w-full">
+                </div>
+                <div class="lg:w-1/2 p-8">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4 gradient-text2">Personal Life</h3>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 rounded-full text-xs bg-yellow-900 bg-opacity-30 text-yellow-300">Hobbies</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-red-900 bg-opacity-30 text-red-300">Passions</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-green-900 bg-opacity-30 text-green-300">Daily Life</span>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Beyond my professional pursuits, I enjoy a variety of hobbies including robotics competitions, traveling, and exploring new technologies. 
+                        These activities help me maintain a balanced lifestyle and fuel my creativity.
+                    </p>
+                    <button onclick="openPersonalModal()" class="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-colors">
+                        View Details →
+                    </button>
+                </div>
+            </div>
+</div>
+</div>
+    </section>
+    <!-- Modals Section -->
+    <!-- Professional Life Modal -->
+    <div id="professionalModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto">
+        <div class="container mx-auto p-4 md:p-8 my-8 max-w-4xl">
+            <div class="bg-gray-800 rounded-xl p-6 md:p-8 relative">
+                <button onclick="closeProfessionalModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white">&times;</button>
+<div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-4 gradient-text">Professional Journey</h2>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 rounded-full text-xs bg-blue-900 bg-opacity-30 text-blue-300">Work</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-purple-900 bg-opacity-30 text-purple-300">Education</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-green-900 bg-opacity-30 text-green-300">Skills</span>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-blue-400">Work Experience</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Details about your professional experiences, internships, and career milestones. Showcase your growth and achievements in the professional world.
+                    </p>
+                    
+                    <h3 class="text-xl font-bold mb-4 text-purple-400 mt-8">Education</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Your academic journey, including degrees, certifications, and special training programs. Highlight any academic achievements or honors.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <img src="professional life1.jpg" alt="Workplace" class="rounded-lg hover:scale-105 transition-transform">
+                    <img src="professional life2.jpg" alt="Education" class="rounded-lg hover:scale-105 transition-transform">
+                    <img src="professional life3.jpg" alt="Technology" class="rounded-lg hover:scale-105 transition-transform">
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">Key Professional Moments</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">▹</span>
+                            <span class="text-gray-300">Describe significant work projects or achievements</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">▹</span>
+                            <span class="text-gray-300">Important career milestones or promotions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">▹</span>
+                            <span class="text-gray-300">Notable academic achievements or awards</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-2">▹</span>
+                            <span class="text-gray-300">Key skills developed through professional experiences</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Personal Life Modal -->
+    <div id="personalModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto">
+        <div class="container mx-auto p-4 md:p-8 my-8 max-w-4xl">
+            <div class="bg-gray-800 rounded-xl p-6 md:p-8 relative">
+                <button onclick="closePersonalModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white">&times;</button>
+<div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-4 gradient-text2">Personal Life</h2>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 rounded-full text-xs bg-yellow-900 bg-opacity-30 text-yellow-300">Hobbies</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-red-900 bg-opacity-30 text-red-300">Passions</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-green-900 bg-opacity-30 text-green-300">Daily Life</span>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Hobbies & Interests</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Share your personal passions, activities you enjoy, and how you spend your free time. This could include sports, arts, travel, or any other personal interests.
+                    </p>
+                    
+                    <h3 class="text-xl font-bold mb-4 text-red-400 mt-8">Life Philosophy</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Your personal beliefs, values, and approach to life. What motivates you and how you view the world around you.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <img src="personal life1.jpg" alt="Travel" class="rounded-lg hover:scale-105 transition-transform">
+                    <img src="personal life2.jpg" alt="Sports" class="rounded-lg hover:scale-105 transition-transform">
+                    <img src="personal life3.jpg" alt="Food" class="rounded-lg hover:scale-105 transition-transform">
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text2">Personal Highlights</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">▹</span>
+                            <span class="text-gray-300">Favorite hobbies and why you enjoy them</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">▹</span>
+                            <span class="text-gray-300">Memorable travel experiences or adventures</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">▹</span>
+                            <span class="text-gray-300">Personal achievements outside of work</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">▹</span>
+                            <span class="text-gray-300">Daily routines or habits that define your lifestyle</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+<div id="projectModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto">
+        <div class="container mx-auto p-4 md:p-8 my-8 max-w-4xl">
+            <div class="bg-gray-800 rounded-xl p-6 md:p-8 relative">
+                <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white">&times;</button>
+                
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold mb-4 gradient-text3">ROBOKO Robotics Challenge</h2>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 rounded-full text-xs bg-red-900 bg-opacity-30 text-red-300">Robotics</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-blue-900 bg-opacity-30 text-blue-300">Team Project</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-green-900 bg-opacity-30 text-green-300">Problem Solving</span>
+                        <span class="px-3 py-1 rounded-full text-xs bg-purple-900 bg-opacity-30 text-purple-300">IEEE ENP</span>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        ROBOKO is an intensive robotics competition organized by the IEEE Student Branch at École Nationale Polytechnique d'Alger. 
+                        This challenging competition brought together talented engineering students to design, build, and program autonomous robots 
+                        capable of completing complex tasks within strict time constraints.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Our team worked collaboratively to overcome numerous engineering challenges, from mechanical design and sensor integration 
+                        to algorithm development and real-time decision making. The competition tested not only our technical skills but also our 
+                        ability to work effectively under pressure and adapt to unexpected obstacles.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <img src="roboko2.jpg" alt="ROBOKO Robot" class="rounded-lg hover:scale-105 transition-transform">
+                    <img src="roboko3.jpg" alt="Team Working" class="rounded-lg hover:scale-105 transition-transform">
+                    <img src="roboko1.jpg" alt="Competition Day" class="rounded-lg hover:scale-105 transition-transform">
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gradient-text3">Key Achievements & Features</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">▹</span>
+                            <span class="text-gray-300">Designed and built an autonomous robot from scratch within competition timeline</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">▹</span>
+                            <span class="text-gray-300">Implemented advanced sensor fusion algorithms for precise navigation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">▹</span>
+                            <span class="text-gray-300">Developed custom control systems for efficient task completion</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">▹</span>
+                            <span class="text-gray-300">Successfully collaborated with a multidisciplinary team of engineers</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">▹</span>
+                            <span class="text-gray-300">Demonstrated strong problem-solving skills under competitive pressure</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">▹</span>
+                            <span class="text-gray-300">Applied theoretical knowledge to practical real-world robotics challenges</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 md:px-20 bg-gray-800">
+        <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Have a project?</h2>
+                <h3 class="text-2xl md:text-3xl mb-8 text-purple-400">Let's talk!</h3>
+                <button onclick="handleSubmit()" class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-3 rounded-full hover:from-purple-600 hover:to-blue-600 transition-all shadow-lg">
+                    Submit
+                </button>
+            </div>
+            <div class="md:w-1/2">
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label class="block mb-2 text-gray-300">Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-gray-300">Email</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    </div>
+                    <div>
+                        <label class="block mb-2 text-gray-300">Message</label>
+                        <textarea name="message" required rows="5" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Popup -->
+    <div id="popupOverlay" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden" onclick="closePopup()"></div>
+    <div id="successPopup" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 p-8 rounded-xl z-50 max-w-md w-11/12 hidden">
+        <h3 class="text-2xl font-bold mb-4 text-green-400 flex items-center">
+            <i class="fas fa-check-circle mr-2"></i> Message Received!
+        </h3>
+        <p class="text-gray-300 mb-6">
+            Thank you for reaching out. I will review your message and respond within 24 hours.
+        </p>
+        <button onclick="closePopup()" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg transition-colors">
+            Close
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 md:px-20 bg-gray-900">
+        <div class="text-center">
+            <h2 class="text-2xl font-bold mb-8">Social Media Contacts</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.linkedin.com/in/anis-imad-eddine-belli-663bb9307?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="w-12 h-12 rounded-full bg-blue-900 bg-opacity-30 flex items-center justify-center text-blue-300 hover:bg-blue-800 hover:text-white transition-colors">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/bllanis?igsh=MTIxdGtsMzllaWVqOQ==" class="w-12 h-12 rounded-full bg-pink-900 bg-opacity-30 flex items-center justify-center text-pink-300 hover:bg-pink-800 hover:text-white transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1DkF2iqJqy/" class="w-12 h-12 rounded-full bg-indigo-900 bg-opacity-30 flex items-center justify-center text-indigo-300 hover:bg-indigo-800 hover:text-white transition-colors">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <div class="text-gray-500 text-sm border-t border-gray-800 pt-6">
+                &copy; 2026 ANIS IMAD EDDINE BELLI. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" onclick="scrollToTop()" class="fixed bottom-8 right-8 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-purple-700 transition-colors hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        // Modal Functions
+        function openProfessionalModal() {
+            document.getElementById('professionalModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProfessionalModal() {
+            document.getElementById('professionalModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openPersonalModal() {
+            document.getElementById('personalModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePersonalModal() {
+            document.getElementById('personalModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(event) {
+            const professionalModal = document.getElementById('professionalModal');
+            const personalModal = document.getElementById('personalModal');
+            
+            if (event.target === professionalModal) {
+                closeProfessionalModal();
+            }
+            if (event.target === personalModal) {
+                closePersonalModal();
+            }
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeProfessionalModal();
+                closePersonalModal();
+            }
+        });
+
+        // Initialize EmailJS
+(function(){
+            emailjs.init("uxjSQtHKH18rNTe3y");
+        })();
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to contact section
+        function scrollToContact() {
+            const contactSection = document.getElementById('contact');
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', () => {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.remove('hidden');
+            } else {
+                scrollButton.classList.add('hidden');
+            }
+        });
+
+        // Handle contact form submission
+        function handleSubmit() {
+            const form = document.getElementById('contactForm');
+            const name = form.name.value;
+            const email = form.email.value;
+            const message = form.message.value;
+
+            if (!name || !email || !message) {
+                alert('Please fill in all fields before submitting.');
+                return;
+            }
+
+            // Send email via EmailJS
+            emailjs.sendForm(
+                "service_zo3uag9",
+                "template_c0uxywy",
+                "#contactForm"
+            ).then(() => {
+                // Show success popup
+                document.getElementById('popupOverlay').classList.remove('hidden');
+                document.getElementById('successPopup').classList.remove('hidden');
+                
+                // Clear form
+                form.reset();
+            }).catch((error) => {
+                alert("Failed to send message. Please try again.");
+                console.log(error);
+            });
+        }
+
+        // Close popup function
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.add('hidden');
+            document.getElementById('successPopup').classList.add('hidden');
+        }
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
+        });
+
+        // Project Modal Functions
+        function openProjectModal() {
+            document.getElementById('projectModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target == modal) {
+                closeProjectModal();
+            }
+        }
+
+        // Navigation active state
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animate skill bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.skill-progress');
+                    progressBars.forEach(bar => {
+                        bar.style.width = bar.style.width;
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-category').forEach(category => {
+            observer.observe(category);
+        });
+    </script>
+</body>
+</html>
