@@ -1,0 +1,260 @@
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #e2e8f0;
+    background-color: #111827;
+}
+
+/* Navigation */
+nav {
+    transition: all 0.3s ease;
+}
+
+.nav-links a {
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #a509d4, #40a6da);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: #a78bfa;
+}
+
+/* Hero Section */
+#home {
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.9) 0%, rgba(37, 47, 77, 0.8) 100%);
+}
+
+/* Sections */
+section {
+    padding: 5rem 0;
+}
+/* Cards */
+.bg-gray-800 {
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    background: rgba(31, 41, 55, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg-gray-800::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #a509d4, #40a6da);
+}
+
+.bg-gray-800:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.bg-gray-800:hover::before {
+    background: linear-gradient(90deg, #e28e18, #dbb768);
+}
+/* Skill Cards */
+.skill-card {
+    transition: all 0.4s ease;
+    background: rgba(31, 41, 55, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, #a509d4, #40a6da);
+}
+
+.skill-icon {
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.skill-card:hover .skill-progress {
+    animation: bubble 0.5s ease-in-out;
+}
+
+@keyframes bubble {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.1); }
+}
+.skill-card:hover .skill-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+.skill-progress {
+    position: relative;
+    transition: height 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+    width: 20px;
+    height: 0;
+    background: linear-gradient(to bottom, #a509d4, #40a6da);
+    border-radius: 4px;
+    margin-left: auto;
+    border: 1px solid rgba(31, 41, 55, 0.8);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.skill-card .flex-1 {
+    position: relative;
+}
+@keyframes shine {
+    100% {
+        transform: translateX(100%);
+    }
+}
+/* Buttons */
+button {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/* Modal Overlay */
+.bg-opacity-90 {
+    backdrop-filter: blur(10px);
+}
+
+/* Modal Content */
+.bg-gray-800.rounded-xl {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: #1f2937;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Gradient Text Classes */
+.gradient-text {
+    background: linear-gradient(to right, #a509d4, #40a6da);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text2 {
+    background: linear-gradient(to right, #e28e18, #dbb768);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-text3 {
+    background: linear-gradient(to right, #ee3440, #c05e77);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Typography */
+h1 {
+    font-family: 'Inria Serif', serif;
+    font-style: italic;
+}
+
+h2 {
+    font-family: 'Pristina', cursive;
+}
+
+.stat-item h4 {
+    font-family: 'Lucida Calligraphy', cursive;
+    font-size: 24px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(to right,#a509d4, #40a6da);
+    margin-left: 5px;
+}
+
+/* Profile Image */
+.profile-circle {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.profile-circle::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: linear-gradient(45deg, #a509d4, #40a6da);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(30px);
+    opacity: 0.7;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #1f2937;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
