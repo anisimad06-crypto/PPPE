@@ -6,7 +6,7 @@
     <title>ANIS IMAD EDDINE BELLI - Control Engineering student</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css" type="text/css">
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .gradient-text {
             font-size: 48px;
@@ -48,14 +48,150 @@
         h2 {
             font-family: 'Pristina', cursive;
         }
+        
+        /* Mobile menu styles */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(17, 24, 39, 0.98);
+            z-index: 100;
+            padding: 80px 20px 20px;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .mobile-menu ul li {
+            margin: 20px 0;
+        }
+        
+        .mobile-menu ul li a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+        
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 32px;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* Image Lightbox styles */
+        .image-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .image-lightbox.active {
+            display: flex;
+        }
+        
+        .image-lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(168, 85, 247, 0.5);
+        }
+        
+        .image-lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 201;
+        }
+        
+        .image-lightbox-close:hover {
+            background: rgba(168, 85, 247, 0.8);
+            transform: rotate(90deg);
+        }
+        
+        .lightbox-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 201;
+            user-select: none;
+        }
+        
+        .lightbox-arrow:hover {
+            background: rgba(168, 85, 247, 0.8);
+        }
+        
+        .lightbox-arrow-left {
+            left: 30px;
+        }
+        
+        .lightbox-arrow-right {
+            right: 30px;
+        }
+        
+        .lightbox-arrow.hidden {
+            display: none;
+        }
+        
+        .clickable-image {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .clickable-image:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
     <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg px-4 py-5 md:px-20 flex justify-between items-center">
-        <div class="text-xl font-bold text-amber-200">ANIS IMAD EDDINE BELLI
-                    </div>
-<ul style="font-size: medium; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="nav-links hidden md:flex space-x-8">
+        <div class="text-xl font-bold text-amber-200">ANIS IMAD EDDINE BELLI</div>
+        <ul style="font-size: medium; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="nav-links hidden md:flex space-x-8">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -64,11 +200,34 @@
             <li><a href="#personal">personal life</a></li>
             <li><a href="#contact">Contacts</a></li>
         </ul>
-<button class="md:hidden text-2xl">
+        <button id="menuToggle" class="md:hidden text-2xl">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
-<!-- Hero Section -->
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+        <span class="mobile-menu-close" id="closeMenu">&times;</span>
+        <ul>
+            <li><a href="#home" class="mobile-link">Home</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#skills" class="mobile-link">Skills</a></li>
+            <li><a href="#professional" class="mobile-link">Professional Life</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#personal" class="mobile-link">Personal Life</a></li>
+            <li><a href="#contact" class="mobile-link">Contacts</a></li>
+        </ul>
+    </div>
+
+    <!-- Image Lightbox -->
+    <div id="imageLightbox" class="image-lightbox">
+        <span class="image-lightbox-close" id="closeLightbox">&times;</span>
+        <div class="lightbox-arrow lightbox-arrow-left" id="prevImage">‹</div>
+        <div class="lightbox-arrow lightbox-arrow-right" id="nextImage">›</div>
+        <img id="lightboxImage" src="" alt="Enlarged view">
+    </div>
+
+    <!-- Hero Section -->
     <section id="home" class="min-h-screen pt-32 pb-20 px-4 md:px-20 flex flex-col items-center">
         <div class="w-full flex flex-col md:flex-row items-center justify-between">
             <div class="md:w-1/2 mb-16 md:mb-0">
@@ -81,10 +240,10 @@
             </div>
             <div class="relative md:w-1/2 flex justify-center">
                 <div class="absolute -z-10 w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 opacity-20 blur-3xl"></div>
-              <div class="relative w-72 h-72 md:w-[28rem] md:h-[28rem] rounded-full border-4 border-purple-400 overflow-hidden profile-border" style="box-shadow: 0 0 60px rgba(168, 85, 247, 0.5), 0 0 100px rgba(96, 165, 250, 0.4), inset 0 0 40px rgba(169, 85, 247, 0.772);">
+                <div class="relative w-72 h-72 md:w-[28rem] md:h-[28rem] rounded-full border-4 border-purple-400 overflow-hidden profile-border" style="box-shadow: 0 0 60px rgba(168, 85, 247, 0.5), 0 0 100px rgba(96, 165, 250, 0.4), inset 0 0 40px rgba(169, 85, 247, 0.772);">
                     <img src="a pic of mine.png" alt="Profile" class="w-full h-full object-cover object-center">
                 </div>
-</div>
+            </div>
         </div>
         <div class="w-full mt-16 py-8 flex flex-wrap justify-center gap-8 text-gray-400">
             <span>HTML5</span>
@@ -100,22 +259,22 @@
     <section id="about" class="py-20 px-4 md:px-20">
         <div class="flex flex-col md:flex-row gap-12">
             <div class="md:w-1/2 space-y-8">
-                <div class="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all cursor-pointer border-l-4 border-purple-500">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-lg bg-purple-500 bg-opacity-20 flex items-center justify-center text-2xl">💻</div>
-                        <h3 class="text-xl">Website Development</h3>
-                    </div>
-                </div>
-                <div class="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all cursor-pointer border-l-4 border-yellow-500">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-lg bg-yellow-500 bg-opacity-20 flex items-center justify-center text-2xl">🎨</div>
-                        <h3 class="text-xl">Graphic Design</h3>
-                    </div>
-                </div>
                 <div class="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all cursor-pointer border-l-4 border-red-500">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-lg bg-red-500 bg-opacity-20 flex items-center justify-center text-2xl">🤖</div>
                         <h3 class="text-xl">Robotics & Technical Projects</h3>
+                    </div>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all cursor-pointer border-l-4 border-purple-500">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-purple-500 bg-opacity-20 flex items-center justify-center text-2xl">⚙️</div>
+                        <h3 class="text-xl">P&ID</h3>
+                    </div>
+                </div>
+                <div class="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-all cursor-pointer border-l-4 border-yellow-500">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-yellow-500 bg-opacity-20 flex items-center justify-center text-2xl">🔧</div>
+                        <h3 class="text-xl">Mechanical & Instrumentation Maintenance</h3>
                     </div>
                 </div>
             </div>
@@ -160,10 +319,6 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-blue-300">HTML5</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 95%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">95%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Semantic markup, accessibility, modern APIs</p>
@@ -175,25 +330,17 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-blue-300">CSS3</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 90%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">90%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Flexbox, Grid, Animations, Responsive design</p>
                     </div>
-<div class="skill-card group relative p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700 hover:border-purple-500 transition-all">
+                    <div class="skill-card group relative p-6 rounded-xl bg-gray-800 bg-opacity-50 backdrop-blur-lg border border-gray-700 hover:border-purple-500 transition-all">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="skill-icon w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl">
                                 <i class="fab fa-js"></i>
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-blue-300">JavaScript</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 85%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">85%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">ES6+, DOM manipulation, Async programming</p>
@@ -205,10 +352,6 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-blue-300">Python</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 80%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">80%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Data structures, OOP, Scripting, Automation</p>
@@ -220,10 +363,6 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-blue-300">C/C++</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 70%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">70%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Memory management, Algorithms, Embedded systems</p>
@@ -235,15 +374,11 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-blue-300">SQL</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-blue-500 to-purple-500" style="width: 80%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">80%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Query optimization, Schema design, Transactions</p>
                     </div>
-</div>
+                </div>
             </div>
             <div>
                 <h3 class="text-2xl font-bold mb-6 text-yellow-400 border-l-4 border-yellow-500 pl-4">Engineering & Technical Tools</h3>
@@ -255,10 +390,6 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-yellow-300">MATLAB</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-yellow-500 to-amber-500" style="width: 85%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">85%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Simulations, Data analysis, Algorithm development</p>
@@ -270,10 +401,6 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-yellow-300">SolidWorks</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-yellow-500 to-amber-500" style="width: 70%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">70%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">3D modeling, Assembly design, Technical drawings</p>
@@ -291,10 +418,6 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-pink-300">Canva</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-pink-500 to-rose-500" style="width: 90%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">90%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Graphic design, Social media content, Presentations</p>
@@ -306,10 +429,6 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-pink-300">PowerPoint</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-pink-500 to-rose-500" style="width: 80%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">80%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Professional presentations, Slide design, Storytelling</p>
@@ -327,10 +446,6 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-green-300">GitHub</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-green-500 to-emerald-500" style="width: 85%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">85%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Version control, Collaboration, CI/CD pipelines</p>
@@ -342,18 +457,15 @@
                             </div>
                             <div class="flex-1">
                                 <h4 class="text-lg font-medium text-green-300">VS Code</h4>
-                                <div class="relative w-full h-2 bg-gray-700 rounded-full mt-2">
-                                    <div class="skill-progress absolute h-full rounded-full bg-gradient-to-r from-green-500 to-emerald-500" style="width: 95%"></div>
-                                    <div class="absolute right-0 -top-6 text-xs text-gray-400">95%</div>
-                                </div>
                             </div>
                         </div>
                         <p class="text-gray-400 text-sm mt-2">Extensions, Debugging, Workspace configuration</p>
                     </div>
                 </div>
             </div>
-</div>
+        </div>
     </section>
+    
     <!-- Professional Section -->
     <section id="professional" class="py-20 px-4 md:px-20 bg-gray-800">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Professional Journey</h2>
@@ -376,21 +488,21 @@
                             My professional journey includes academic achievements at ENPA and hands-on experience in various technical projects. 
                             I've developed expertise in automation, control systems, and web development through both coursework and personal initiatives.
                         </p>
-                        <button onclick="openProfessionalModal()" class="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-colors">
+                        <button onclick="event.stopPropagation(); openProfessionalModal();" class="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-colors">
                             View Details →
                         </button>
                     </div>
                 </div>
-</div>
-</div>
-</section>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Section -->
-<section id="projects" class="py-20 px-4 md:px-20">
+    <section id="projects" class="py-20 px-4 md:px-20">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Projects</h2>
         <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mb-12"></div>
 
-        <div class="flex flex-col md:flex-row gap-12 items-center bg-gray-800 rounded-2xl overflow-hidden">
+        <div class="flex flex-col md:flex-row gap-12 items-center bg-gray-800 rounded-2xl overflow-hidden cursor-pointer hover:bg-gray-700 transition-all" onclick="openProjectModal()">
             <div class="md:w-1/2 p-8">
                 <img src="roboko3.jpg" alt="ROBOKO Robotics Challenge" class="rounded-lg shadow-2xl w-full">
             </div>
@@ -406,7 +518,7 @@
                     ROBOKO is a robotics competition organized by the IEEE Student Branch at the École Nationale Polytechnique d'Alger.
                     This project required consistancy, teamwork, critical thinking, and technical problem-solving under time constraints.
                 </p>
-                <button onclick="openProjectModal()" class="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-colors">
+                <button onclick="event.stopPropagation(); openProjectModal();" class="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-colors">
                     View Project →
                 </button>
             </div>
@@ -434,21 +546,21 @@
                         Beyond my professional pursuits, I enjoy a variety of hobbies including robotics competitions, traveling, and exploring new technologies. 
                         These activities help me maintain a balanced lifestyle and fuel my creativity.
                     </p>
-                    <button onclick="openPersonalModal()" class="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-colors">
+                    <button onclick="event.stopPropagation(); openPersonalModal();" class="px-6 py-2 border-2 border-white rounded-full hover:bg-white hover:text-gray-900 transition-colors">
                         View Details →
                     </button>
                 </div>
             </div>
-</div>
-</div>
+        </div>
     </section>
+    
     <!-- Modals Section -->
     <!-- Professional Life Modal -->
     <div id="professionalModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto">
         <div class="container mx-auto p-4 md:p-8 my-8 max-w-4xl">
             <div class="bg-gray-800 rounded-xl p-6 md:p-8 relative">
-                <button onclick="closeProfessionalModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white">&times;</button>
-<div class="mb-8">
+                <button onclick="closeProfessionalModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white z-10">&times;</button>
+                <div class="mb-8">
                     <h2 class="text-3xl font-bold mb-4 gradient-text">Professional Journey</h2>
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-3 py-1 rounded-full text-xs bg-blue-900 bg-opacity-30 text-blue-300">Work</span>
@@ -467,36 +579,32 @@
                     <h3 class="text-xl font-bold mb-4 text-purple-400 mt-8">Education</h3>
                     <p class="text-gray-300 leading-relaxed">
                         After two years of preparatory studies(science and technology common core), 
-                        which included subjects form Physics, Electricity, Fluids mechanics, Materials strength to chemistry...
+                        which included subjects from Physics, Chemistry, Electricity, Fluids mechanics, Materials strength...
                         I'm now a first year Automation&Control student, the first year takes much of general EEA(Electrical engineering, Electronics, Automation), to get more speciallized in the next years 
                         Robotics, Control, Programming... 
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                    <img src="professional life1.jpg" alt="Workplace" class="rounded-lg hover:scale-105 transition-transform">
-                    <img src="professional life2.jpg" alt="Education" class="rounded-lg hover:scale-105 transition-transform">
-                    <img src="professional life3.jpg" alt="Technology" class="rounded-lg hover:scale-105 transition-transform">
+                    <img src="professional life1.jpg" alt="Workplace" class="rounded-lg clickable-image" data-section="professional">
+                    <img src="professional life2.jpg" alt="Education" class="rounded-lg clickable-image" data-section="professional">
+                    <img src="professional life3.jpg" alt="Technology" class="rounded-lg clickable-image" data-section="professional">
                 </div>
 
                 <div>
-                    <h3 class="text-xl font-bold mb-4 gradient-text">Key Professional Moments</h3>
+                    <h3 class="text-xl font-bold mb-4 gradient-text">Professional experience as student</h3>
                     <ul class="space-y-3">
                         <li class="flex items-start">
                             <span class="text-blue-400 mr-2">▹</span>
-                            <span class="text-gray-300">Describe significant work projects or achievements</span>
+                            <span class="text-gray-300">You're likely to lose critical thinking skills if you don't try different perspectives.</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-blue-400 mr-2">▹</span>
-                            <span class="text-gray-300">Important career milestones or promotions</span>
+                            <span class="text-gray-300">A certificate itself isn't the real achievemnt but the reference to keep you moving on.</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-blue-400 mr-2">▹</span>
-                            <span class="text-gray-300">Notable academic achievements or awards</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-400 mr-2">▹</span>
-                            <span class="text-gray-300">Key skills developed through professional experiences</span>
+                            <span class="text-gray-300">Learn something from everything, and everything from one thing." Imam Ali ibn Abi Talib (May God honor his countenance).</span>
                         </li>
                     </ul>
                 </div>
@@ -508,8 +616,8 @@
     <div id="personalModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto">
         <div class="container mx-auto p-4 md:p-8 my-8 max-w-4xl">
             <div class="bg-gray-800 rounded-xl p-6 md:p-8 relative">
-                <button onclick="closePersonalModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white">&times;</button>
-<div class="mb-8">
+                <button onclick="closePersonalModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white z-10">&times;</button>
+                <div class="mb-8">
                     <h2 class="text-3xl font-bold mb-4 gradient-text2">Personal Life</h2>
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-3 py-1 rounded-full text-xs bg-yellow-900 bg-opacity-30 text-yellow-300">Hobbies</span>
@@ -521,39 +629,40 @@
                 <div class="mb-8">
                     <h3 class="text-xl font-bold mb-4 text-yellow-400">Hobbies & Interests</h3>
                     <p class="text-gray-300 mb-4 leading-relaxed">
-                        Share your personal passions, activities you enjoy, and how you spend your free time. This could include sports, arts, travel, or any other personal interests.
-                    </p>
-                    
-                    <h3 class="text-xl font-bold mb-4 text-red-400 mt-8">Life Philosophy</h3>
-                    <p class="text-gray-300 leading-relaxed">
-                        Your personal beliefs, values, and approach to life. What motivates you and how you view the world around you.
+                        I have tried many sports during my childhood like: Karate, Swimming, Badminton, Foortball, Jogging. Then I got obsessed at a certain 
+                        point with Badminton, but unfortunately I couldn't keep practicing after high school, and ever since entering university, I have mostly stopped playing 
+                        sports, just an occasional run from time to time or a Football match.Until this year, where we the students of the ENP have organized a Football league 
+                        "Poly league", where different Specialty Departments play a league, it's actually the second edition of this competition but my first participation.
+                        Besides sports, I go out from time to time with friends from back home or from school for small trips, or at least go watch the sea.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                    <img src="personal life1.jpg" alt="Travel" class="rounded-lg hover:scale-105 transition-transform">
-                    <img src="personal life2.jpg" alt="Sports" class="rounded-lg hover:scale-105 transition-transform">
-                    <img src="personal life3.jpg" alt="Food" class="rounded-lg hover:scale-105 transition-transform">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+                    <img src="personal life1.jpg" alt="Travel" class="rounded-lg clickable-image" data-section="personal">
+                    <img src="personal life2.jpg" alt="Sports" class="rounded-lg clickable-image" data-section="personal">
+                    <img src="personal life3.jpg" alt="Food" class="rounded-lg clickable-image" data-section="personal">
+                    <img src="personal life4.jpg" alt="Activities" class="rounded-lg clickable-image" data-section="personal">
+                    <img src="personal life5.jpeg" alt="More Activities" class="rounded-lg clickable-image" data-section="personal">
                 </div>
 
                 <div>
-                    <h3 class="text-xl font-bold mb-4 gradient-text2">Personal Highlights</h3>
+                    <h3 class="text-xl font-bold mb-4 gradient-text2">Personal experience</h3>
                     <ul class="space-y-3">
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-2">▹</span>
-                            <span class="text-gray-300">Favorite hobbies and why you enjoy them</span>
+                            <span class="text-gray-300">Football&Badmiton are the best sports to help relax and release the negative enrgy.</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-2">▹</span>
-                            <span class="text-gray-300">Memorable travel experiences or adventures</span>
+                            <span class="text-gray-300">The sudden and not well organized trips are the best kind of trips ever !</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-2">▹</span>
-                            <span class="text-gray-300">Personal achievements outside of work</span>
+                            <span class="text-gray-300">In sports, Consistancy is the key difference between hobby and carrer.</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-yellow-400 mr-2">▹</span>
-                            <span class="text-gray-300">Daily routines or habits that define your lifestyle</span>
+                            <span class="text-gray-300">A short run everyday keeps anxiety away.</span>
                         </li>
                     </ul>
                 </div>
@@ -562,10 +671,10 @@
     </div>
 
     <!-- Project Modal -->
-<div id="projectModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto">
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto">
         <div class="container mx-auto p-4 md:p-8 my-8 max-w-4xl">
             <div class="bg-gray-800 rounded-xl p-6 md:p-8 relative">
-                <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white">&times;</button>
+                <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white z-10">&times;</button>
                 
                 <div class="mb-8">
                     <h2 class="text-3xl font-bold mb-4 gradient-text3">ROBOKO Robotics Challenge</h2>
@@ -591,9 +700,9 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                    <img src="roboko2.jpg" alt="ROBOKO Robot" class="rounded-lg hover:scale-105 transition-transform">
-                    <img src="roboko3.jpg" alt="Team Working" class="rounded-lg hover:scale-105 transition-transform">
-                    <img src="roboko1.jpg" alt="Competition Day" class="rounded-lg hover:scale-105 transition-transform">
+                    <img src="roboko2.jpg" alt="ROBOKO Robot" class="rounded-lg clickable-image" data-section="projects">
+                    <img src="roboko3.jpg" alt="Team Working" class="rounded-lg clickable-image" data-section="projects">
+                    <img src="roboko1.jpg" alt="Competition Day" class="rounded-lg clickable-image" data-section="projects">
                 </div>
 
                 <div>
@@ -701,6 +810,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
         // Modal Functions
         function openProfessionalModal() {
             document.getElementById('professionalModal').classList.remove('hidden');
@@ -722,17 +854,27 @@
             document.body.style.overflow = 'auto';
         }
 
+        function openProjectModal() {
+            document.getElementById('projectModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
         // Close modals when clicking outside
-        document.addEventListener('click', function(event) {
-            const professionalModal = document.getElementById('professionalModal');
-            const personalModal = document.getElementById('personalModal');
-            
-            if (event.target === professionalModal) {
-                closeProfessionalModal();
-            }
-            if (event.target === personalModal) {
-                closePersonalModal();
-            }
+        document.getElementById('professionalModal').addEventListener('click', function(e) {
+            if (e.target === this) closeProfessionalModal();
+        });
+
+        document.getElementById('personalModal').addEventListener('click', function(e) {
+            if (e.target === this) closePersonalModal();
+        });
+
+        document.getElementById('projectModal').addEventListener('click', function(e) {
+            if (e.target === this) closeProjectModal();
         });
 
         // Close modals with Escape key
@@ -740,11 +882,12 @@
             if (e.key === 'Escape') {
                 closeProfessionalModal();
                 closePersonalModal();
+                closeProjectModal();
             }
         });
 
         // Initialize EmailJS
-(function(){
+        (function(){
             emailjs.init("8QUUuo-Z1pTF7z5xT");
         })();
 
@@ -829,25 +972,6 @@
             }
         });
 
-        // Project Modal Functions
-        function openProjectModal() {
-            document.getElementById('projectModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProjectModal() {
-            document.getElementById('projectModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('projectModal');
-            if (event.target == modal) {
-                closeProjectModal();
-            }
-        }
-
         // Navigation active state
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
@@ -890,7 +1014,113 @@
         document.querySelectorAll('.skill-category').forEach(category => {
             observer.observe(category);
         });
+
+        // Image Lightbox Functionality
+        const imageLightbox = document.getElementById('imageLightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const prevImage = document.getElementById('prevImage');
+        const nextImage = document.getElementById('nextImage');
+        const clickableImages = document.querySelectorAll('.clickable-image');
+
+        let currentImageIndex = 0;
+        let currentSectionImages = [];
+
+        // Open lightbox when clicking on any clickable image
+        clickableImages.forEach((img, index) => {
+            img.addEventListener('click', function() {
+                const section = this.getAttribute('data-section');
+                currentSectionImages = Array.from(document.querySelectorAll(`.clickable-image[data-section="${section}"]`));
+                currentImageIndex = currentSectionImages.indexOf(this);
+                
+                showImage(currentImageIndex);
+                imageLightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                updateArrows();
+            });
+        });
+
+        function showImage(index) {
+            if (currentSectionImages[index]) {
+                lightboxImage.src = currentSectionImages[index].src;
+                lightboxImage.alt = currentSectionImages[index].alt;
+            }
+        }
+
+        function updateArrows() {
+            // Show/hide arrows based on position
+            if (currentImageIndex === 0) {
+                prevImage.classList.add('hidden');
+            } else {
+                prevImage.classList.remove('hidden');
+            }
+
+            if (currentImageIndex === currentSectionImages.length - 1) {
+                nextImage.classList.add('hidden');
+            } else {
+                nextImage.classList.remove('hidden');
+            }
+
+            // Hide arrows if only one image
+            if (currentSectionImages.length <= 1) {
+                prevImage.classList.add('hidden');
+                nextImage.classList.add('hidden');
+            }
+        }
+
+        // Navigate to previous image
+        prevImage.addEventListener('click', function() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                showImage(currentImageIndex);
+                updateArrows();
+            }
+        });
+
+        // Navigate to next image
+        nextImage.addEventListener('click', function() {
+            if (currentImageIndex < currentSectionImages.length - 1) {
+                currentImageIndex++;
+                showImage(currentImageIndex);
+                updateArrows();
+            }
+        });
+
+        // Close lightbox when clicking the X button
+        closeLightbox.addEventListener('click', function() {
+            imageLightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close lightbox when clicking outside the image
+        imageLightbox.addEventListener('click', function(e) {
+            if (e.target === imageLightbox) {
+                imageLightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (imageLightbox.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    imageLightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                } else if (e.key === 'ArrowLeft') {
+                    if (currentImageIndex > 0) {
+                        currentImageIndex--;
+                        showImage(currentImageIndex);
+                        updateArrows();
+                    }
+                } else if (e.key === 'ArrowRight') {
+                    if (currentImageIndex < currentSectionImages.length - 1) {
+                        currentImageIndex++;
+                        showImage(currentImageIndex);
+                        updateArrows();
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
-
