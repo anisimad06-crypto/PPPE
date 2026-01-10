@@ -556,7 +556,7 @@
     
     <!-- Modals Section -->
     <!-- Professional Life Modal -->
-    <div id="professionalModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto">
+    <div id="professionalModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto" tabindex="-1">
         <div class="container mx-auto p-4 md:p-8 my-8 max-w-4xl">
             <div class="bg-gray-800 rounded-xl p-6 md:p-8 relative">
                 <button onclick="closeProfessionalModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white z-10">&times;</button>
@@ -613,7 +613,7 @@
     </div>
 
     <!-- Personal Life Modal -->
-    <div id="personalModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto">
+    <div id="personalModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto" tabindex="-1">
         <div class="container mx-auto p-4 md:p-8 my-8 max-w-4xl">
             <div class="bg-gray-800 rounded-xl p-6 md:p-8 relative">
                 <button onclick="closePersonalModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white z-10">&times;</button>
@@ -671,7 +671,7 @@
     </div>
 
     <!-- Project Modal -->
-    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto">
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 overflow-y-auto" tabindex="-1">
         <div class="container mx-auto p-4 md:p-8 my-8 max-w-4xl">
             <div class="bg-gray-800 rounded-xl p-6 md:p-8 relative">
                 <button onclick="closeProjectModal()" class="absolute top-4 right-4 text-3xl text-gray-400 hover:text-white z-10">&times;</button>
@@ -835,33 +835,33 @@
 
         // Modal Functions
         function openProfessionalModal() {
-            document.getElementById('professionalModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            const modal = document.getElementById('professionalModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.focus(), 100);
         }
 
         function closeProfessionalModal() {
             document.getElementById('professionalModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
         }
 
         function openPersonalModal() {
-            document.getElementById('personalModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            const modal = document.getElementById('personalModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.focus(), 100);
         }
 
         function closePersonalModal() {
             document.getElementById('personalModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
         }
 
         function openProjectModal() {
-            document.getElementById('projectModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.focus(), 100);
         }
 
         function closeProjectModal() {
             document.getElementById('projectModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
         }
 
         // Close modals when clicking outside
@@ -1103,16 +1103,19 @@
         // Keyboard navigation
         document.addEventListener('keydown', function(e) {
             if (imageLightbox.classList.contains('active')) {
+                // Only handle arrow keys if lightbox is open
                 if (e.key === 'Escape') {
                     imageLightbox.classList.remove('active');
                     document.body.style.overflow = 'auto';
                 } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
                     if (currentImageIndex > 0) {
                         currentImageIndex--;
                         showImage(currentImageIndex);
                         updateArrows();
                     }
                 } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
                     if (currentImageIndex < currentSectionImages.length - 1) {
                         currentImageIndex++;
                         showImage(currentImageIndex);
@@ -1120,6 +1123,7 @@
                     }
                 }
             }
+            // If lightbox is not open, allow normal scrolling with arrow keys
         });
     </script>
 </body>
