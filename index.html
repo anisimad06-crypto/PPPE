@@ -177,6 +177,13 @@
             display: none;
         }
         
+        /* Hide arrows on mobile devices */
+        @media (max-width: 768px) {
+            .lightbox-arrow {
+                display: none !important;
+            }
+        }
+        
         .clickable-image {
             cursor: pointer;
             transition: transform 0.3s;
@@ -1025,6 +1032,8 @@
 
         let currentImageIndex = 0;
         let currentSectionImages = [];
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         // Open lightbox when clicking on any clickable image
         clickableImages.forEach((img, index) => {
@@ -1085,6 +1094,39 @@
                 updateArrows();
             }
         });
+
+        // Touch/Swipe Navigation
+        imageLightbox.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        imageLightbox.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        function handleSwipe() {
+            const swipeThreshold = 50; // minimum distance for a swipe
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swiped left - go to next image
+                    if (currentImageIndex < currentSectionImages.length - 1) {
+                        currentImageIndex++;
+                        showImage(currentImageIndex);
+                        updateArrows();
+                    }
+                } else {
+                    // Swiped right - go to previous image
+                    if (currentImageIndex > 0) {
+                        currentImageIndex--;
+                        showImage(currentImageIndex);
+                        updateArrows();
+                    }
+                }
+            }
+        }
 
         // Close lightbox when clicking the X button
         closeLightbox.addEventListener('click', function() {
