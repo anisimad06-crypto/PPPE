@@ -192,12 +192,327 @@
         .clickable-image:hover {
             transform: scale(1.05);
         }
+         /* Light Mode Styles */
+body.light-mode {
+    background-color: #f3f4f6 !important;
+    color: #1f2937;
+}
+
+body.light-mode #home {
+    background: linear-gradient(135deg, rgba(243, 244, 246, 0.9) 0%, rgba(229, 231, 235, 0.8) 100%) !important;
+}
+
+body.light-mode section {
+    background-color: #f3f4f6;
+}
+
+body.light-mode nav {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+body.light-mode nav a,
+body.light-mode nav button {
+    color: #1f2937;
+}
+
+body.light-mode #themeToggle,
+body.light-mode #themeToggleMobile {
+    background-color: #e5e7eb;
+}
+
+body.light-mode #themeToggle:hover,
+body.light-mode #themeToggleMobile:hover {
+    background-color: #d1d5db;
+}
+
+body.light-mode .mobile-menu {
+    background: rgba(255, 255, 255, 0.98);
+}
+
+body.light-mode .mobile-menu ul li a,
+body.light-mode .mobile-menu-close {
+    color: #1f2937;
+}
+
+body.light-mode .bg-gray-900 {
+    background-color: #ffffff;
+}
+
+body.light-mode .bg-gray-800 {
+    background-color: #f9fafb;
+}
+
+body.light-mode .bg-gray-700 {
+    background-color: #e5e7eb;
+}
+
+body.light-mode .text-gray-300,
+body.light-mode .text-gray-400,
+body.light-mode .text-gray-500 {
+    color: #4b5563;
+}
+
+body.light-mode .border-gray-600,
+body.light-mode .border-gray-700,
+body.light-mode .border-gray-800 {
+    border-color: #d1d5db;
+}
+
+body.light-mode .profile-border {
+    box-shadow: 0 0 60px rgba(168, 85, 247, 0.3), 0 0 100px rgba(96, 165, 250, 0.2), inset 0 0 40px rgba(169, 85, 247, 0.4);
+}
+
+body.light-mode .skill-card {
+    background-color: #ffffff;
+    border-color: #e5e7eb;
+}
+
+body.light-mode .skill-card:hover {
+    background-color: #f9fafb;
+}
+
+body.light-mode #professionalModal .bg-gray-800,
+body.light-mode #personalModal .bg-gray-800,
+body.light-mode #projectModal .bg-gray-800 {
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+body.light-mode #successPopup {
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+body.light-mode footer {
+    background-color: #f9fafb;
+}
+
+body.light-mode .image-lightbox {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+body.light-mode .image-lightbox-close,
+body.light-mode .lightbox-arrow {
+    background: rgba(0, 0, 0, 0.1);
+    color: #1f2937;
+}
+
+body.light-mode .image-lightbox-close:hover,
+body.light-mode .lightbox-arrow:hover {
+    background: rgba(168, 85, 247, 0.3);
+}
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #f3f4f6 !important;
+    color: #1f2937;
+}
+
+body.light-mode #home {
+    background: linear-gradient(135deg, rgba(243, 244, 246, 0.9) 0%, rgba(229, 231, 235, 0.8) 100%) !important;
+}
+
+body.light-mode section {
+    background-color: #f3f4f6 !important;
+}
+
+body.light-mode nav {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+body.light-mode nav a,
+body.light-mode nav button {
+    color: #1f2937;
+}
+
+/* ... keep ALL your existing light mode CSS ... */
+
+/* ADD these NEW rules at the end */
+body.light-mode #professional,
+body.light-mode #contact {
+    background-color: #e5e7eb !important;
+}
+
+body.light-mode .skill-card {
+    background-color: #ffffff !important;
+    border-color: #e5e7eb !important;
+}
+
+body.light-mode .skill-card::before {
+    background: linear-gradient(to bottom, #a509d4, #40a6da);
+}
+
+body.light-mode .bg-gray-800::before {
+    background: linear-gradient(90deg, #a509d4, #40a6da);
+}
+
+body.light-mode .p-6.rounded-xl.bg-gray-800,
+body.light-mode .p-8.bg-gray-900 {
+    background-color: #ffffff !important;
+}
+
+body.light-mode .bg-gray-900.rounded-xl,
+body.light-mode .p-8.bg-gray-900.rounded-xl {
+    background-color: #ffffff !important;
+}
+
+body.light-mode input,
+body.light-mode textarea {
+    background-color: #ffffff !important;
+    border-color: #d1d5db !important;
+    color: #1f2937;
+}
+
+body.light-mode label {
+    color: #4b5563;
+}
+/* Add these to your light mode CSS section */
+
+/* Fix all section backgrounds */
+body.light-mode #about,
+body.light-mode #skills,
+body.light-mode #projects,
+body.light-mode #personal {
+    background-color: #f3f4f6 !important;
+}
+
+body.light-mode #professional {
+    background-color: #e5e7eb !important;
+}
+
+body.light-mode #contact {
+    background-color: #e5e7eb !important;
+}
+
+/* Fix Professional/Personal/Projects cards */
+body.light-mode .p-8.bg-gray-900.rounded-xl.cursor-pointer,
+body.light-mode .bg-gray-800.rounded-2xl,
+body.light-mode .flex.flex-col.lg\:flex-row {
+    background-color: #ffffff !important;
+}
+
+body.light-mode .lg\:w-1\/2.p-8,
+body.light-mode .md\:w-1\/2.p-8 {
+    color: #1f2937;
+}
+
+/* Fix all headings in light mode */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+    color: #1f2937;
+}
+
+body.light-mode .text-purple-400 {
+    color: #7c3aed !important;
+}
+
+body.light-mode .text-blue-400,
+body.light-mode .text-blue-300 {
+    color: #2563eb !important;
+}
+
+body.light-mode .text-yellow-400,
+body.light-mode .text-yellow-300 {
+    color: #d97706 !important;
+}
+
+body.light-mode .text-pink-400,
+body.light-mode .text-pink-300 {
+    color: #db2777 !important;
+}
+
+body.light-mode .text-green-400,
+body.light-mode .text-green-300 {
+    color: #059669 !important;
+}
+
+body.light-mode .text-red-300 {
+    color: #dc2626 !important;
+}
+
+/* Fix skill card text */
+body.light-mode .skill-card h4,
+body.light-mode .skill-card p {
+    color: #4b5563;
+}
+
+/* Fix social media icons */
+body.light-mode footer {
+    background-color: #f9fafb !important;
+}
+
+body.light-mode .bg-blue-900 {
+    background-color: #dbeafe !important;
+}
+
+body.light-mode .text-blue-300 {
+    color: #2563eb !important;
+}
+
+body.light-mode .bg-pink-900 {
+    background-color: #fce7f3 !important;
+}
+
+body.light-mode .text-pink-300 {
+    color: #db2777 !important;
+}
+
+body.light-mode .bg-indigo-900 {
+    background-color: #e0e7ff !important;
+}
+
+body.light-mode .text-indigo-300 {
+    color: #4f46e5 !important;
+}
+
+body.light-mode footer a:hover {
+    background-color: #2563eb !important;
+}
+
+body.light-mode footer a:hover i {
+    color: #ffffff !important;
+}
+
+/* Fix tags/badges */
+body.light-mode .bg-blue-900.bg-opacity-30,
+body.light-mode .bg-purple-900.bg-opacity-30,
+body.light-mode .bg-green-900.bg-opacity-30,
+body.light-mode .bg-yellow-900.bg-opacity-30,
+body.light-mode .bg-red-900.bg-opacity-30 {
+    background-color: rgba(229, 231, 235, 0.8) !important;
+}
+
+/* Fix modal backgrounds */
+body.light-mode #professionalModal,
+body.light-mode #personalModal,
+body.light-mode #projectModal {
+    background: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.light-mode #professionalModal .bg-gray-800,
+body.light-mode #personalModal .bg-gray-800,
+body.light-mode #projectModal .bg-gray-800 {
+    background-color: #ffffff !important;
+    border: 1px solid #e5e7eb;
+}
+
+body.light-mode #professionalModal h3,
+body.light-mode #personalModal h3,
+body.light-mode #projectModal h3,
+body.light-mode #professionalModal p,
+body.light-mode #personalModal p,
+body.light-mode #projectModal p,
+body.light-mode #professionalModal ul li,
+body.light-mode #personalModal ul li,
+body.light-mode #projectModal ul li {
+    color: #4b5563 !important;
+}
     </style>
 </head>
 <body class="bg-gray-900 text-white">
     <!-- Navigation -->
     <nav class="fixed w-full top-0 z-50 bg-gray-900 bg-opacity-95 backdrop-filter backdrop-blur-lg px-4 py-5 md:px-20 flex justify-between items-center">
-        <div class="text-xl font-bold text-amber-200">ANIS IMAD EDDINE BELLI</div>
+        <div style="color: rgba(235, 177, 114, 0.95); font-family: 'Courier New', monospace;" class="text-xl font-bold">ANIS IMAD EDDINE BELLI</div> 
         <ul style="font-size: medium; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class="nav-links hidden md:flex space-x-8">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -207,15 +522,25 @@
             <li><a href="#personal">personal life</a></li>
             <li><a href="#contact">Contacts</a></li>
         </ul>
-        <button id="menuToggle" class="md:hidden text-2xl">
-            <i class="fas fa-bars"></i>
-        </button>
+        <div class="flex items-center gap-4">
+    <button id="themeToggle" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition-all">
+        <i class="fas fa-moon text-indigo-400"></i>
+    </button>
+    <button id="menuToggle" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+    </button>
+        </div>
     </nav>
 
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="mobile-menu">
-        <span class="mobile-menu-close" id="closeMenu">&times;</span>
-        <ul>
+    <span class="mobile-menu-close" id="closeMenu">&times;</span>
+    <div class="flex justify-center mb-8">
+        <button id="themeToggleMobile" class="w-12 h-12 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center transition-all">
+            <i class="fas fa-moon text-indigo-400"></i>
+        </button>
+    </div>
+    <ul>
             <li><a href="#home" class="mobile-link">Home</a></li>
             <li><a href="#about" class="mobile-link">About</a></li>
             <li><a href="#skills" class="mobile-link">Skills</a></li>
@@ -649,7 +974,7 @@
                     <img src="personal life2.jpg" alt="Sports" class="rounded-lg clickable-image" data-section="personal">
                     <img src="personal life3.jpg" alt="Food" class="rounded-lg clickable-image" data-section="personal">
                     <img src="personal life4.jpg" alt="Activities" class="rounded-lg clickable-image" data-section="personal">
-                    <img src="personal life5.JPEG" alt="More Activities" class="rounded-lg clickable-image" data-section="personal">
+                    <img src="personal life5.jpeg" alt="More Activities" class="rounded-lg clickable-image" data-section="personal">
                 </div>
 
                 <div>
@@ -817,6 +1142,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
+        // Theme Toggle Functionality
+const themeToggle = document.getElementById('themeToggle');
+const themeToggleMobile = document.getElementById('themeToggleMobile');
+const body = document.body;
+const themeIcon = themeToggle.querySelector('i');
+const themeIconMobile = themeToggleMobile.querySelector('i');
+
+// Check for saved theme preference or default to dark mode
+const currentTheme = localStorage.getItem('theme') || 'dark';
+if (currentTheme === 'light') {
+    body.classList.add('light-mode');
+    updateThemeIcons(true);
+}
+
+function updateThemeIcons(isLight) {
+    [themeIcon, themeIconMobile].forEach(icon => {
+        if (isLight) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+            icon.classList.remove('text-indigo-400');
+            icon.classList.add('text-yellow-400');
+        } else {
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+            icon.classList.remove('text-yellow-400');
+            icon.classList.add('text-indigo-400');
+        }
+    });
+}
+
+function toggleTheme() {
+    body.classList.toggle('light-mode');
+    
+    if (body.classList.contains('light-mode')) {
+        updateThemeIcons(true);
+        localStorage.setItem('theme', 'light');
+    } else {
+        updateThemeIcons(false);
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+themeToggleMobile.addEventListener('click', toggleTheme);
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1170,4 +1539,3 @@
     </script>
 </body>
 </html>
-
